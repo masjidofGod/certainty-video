@@ -1,0 +1,130 @@
+# The kit, run from scratch on Windows, macOS and Linux the way the plugin runs it: the kit in one folder, the
+# workspace in another (with a space in its name). Setup, init, the demo with no data of one's own, doctor, the tests,
+# a new episode and a draft. On Windows it runs twice: from cmd.exe (bin\certainty.cmd) and from Git Bash
+# (bin/certainty), the shell Claude Code uses there. Then a spoken take through Whisper on Windows, and the plugin's
+# manifests through Claude Code's validator.
+name: check
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  kit:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: ffmpeg (Windows)
+        if: runner.os == 'Windows'
+        run: choco install ffmpeg -y --no-progress
+      - name: ffmpeg (macOS)
+        if: runner.os == 'macOS'
+        run: brew install ffmpeg
+      - name: ffmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: setup, init, demo, doctor, tests, a new episode, a draft (Windows, cmd.exe)
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          set "KIT=%GITHUB_WORKSPACE%"
+          mkdir "%RUNNER_TEMP%\my series" && cd /d "%RUNNER_TEMP%\my series" || exit /b 1
+          call "%KIT%\bin\certainty.cmd" setup || exit /b 1
+          call "%KIT%\bin\certainty.cmd" init || exit /b 1
+          call "%KIT%\bin\certainty.cmd" demo || exit /b 1
+          set "CERTAINTY_QURAN_DATA=%KIT%\tests\fixtures\quran-sample.json"
+          call "%KIT%\bin\certainty.cmd" doctor || exit /b 1
+          call "%KIT%\bin\certainty.cmd" test || exit /b 1
+          call "%KIT%\bin\certainty.cmd" new ci ep-cmd || exit /b 1
+          call "%KIT%\bin\certainty.cmd" film demo --draft || exit /b 1
+      - name: the same commands from Git Bash (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          KIT=$(pwd)
+          export CERTAINTY_QURAN_DATA="$(cygpath -w "$KIT/tests/fixtures/quran-sample.json")"
+          cd "$(cygpath -u "$RUNNER_TEMP")/my series"
+          "$KIT/bin/certainty" doctor
+          "$KIT/bin/certainty" data check
+          "$KIT/bin/certainty" new ci ep-bash
+          "$KIT/bin/certainty" verify demo/claims.toml
+          "$KIT/bin/certainty" stills demo 9.5
+          "$KIT/bin/certainty" cover demo
+          "$KIT/bin/certainty" package demo
+
+      - name: setup, init, demo, doctor, tests, a new episode, a draft (macOS, Linux)
+        if: runner.os != 'Windows'
+        run: |
+          KIT="$GITHUB_WORKSPACE"
+          mkdir -p "$RUNNER_TEMP/my series" && cd "$RUNNER_TEMP/my series"
+          "$KIT/bin/certainty" setup
+          "$KIT/bin/certainty" init
+          "$KIT/bin/certainty" demo
+          export CERTAINTY_QURAN_DATA="$KIT/tests/fixtures/quran-sample.json"
+          "$KIT/bin/certainty" doctor
+          "$KIT/bin/certainty" test
+          "$KIT/bin/certainty" new ci ep-sh
+          "$KIT/bin/certainty" film demo --draft
+
+  whisper:
+    # A spoken take on Windows, heard by Whisper and checked word for word: Windows' own speech voice stands in for
+    # ElevenLabs (no credits), the base.en model for medium.en (a smaller download).
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      CERTAINTY_QURAN_DATA: ${{ github.workspace }}\tests\fixtures\quran-sample.json
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: ffmpeg and Whisper
+        run: |
+          choco install ffmpeg -y --no-progress
+          python -m pip install -q openai-whisper
+      - name: a workspace, an episode, and a take in Windows' speech voice
+        run: |
+          $kit = $env:GITHUB_WORKSPACE
+          $ws = Join-Path $env:RUNNER_TEMP "speech ws"
+          New-Item -ItemType Directory -Force $ws | Out-Null
+          Set-Location $ws
+          & "$kit\bin\certainty.cmd" init; if ($LASTEXITCODE) { exit 1 }
+          & "$kit\bin\certainty.cmd" new ci speech; if ($LASTEXITCODE) { exit 1 }
+          $ep = Join-Path $ws "stories\ci\speech"
+          New-Item -ItemType Directory -Force "$ep\takes" | Out-Null
+          Set-Content -Encoding utf8NoBOM "$ep\script.md" '| L1 | "Count the letters of the first verse." | | | |'
+          Add-Type -AssemblyName System.Speech
+          $s = New-Object System.Speech.Synthesis.SpeechSynthesizer
+          $s.SetOutputToWaveFile("$ep\takes\speech-L01_take1.wav")
+          $s.Speak("Count the letters of the first verse.")
+          $s.Dispose()
+      - name: whisper, takes, clock, mix (cmd.exe)
+        shell: cmd
+        run: |
+          set "KIT=%GITHUB_WORKSPACE%"
+          cd /d "%RUNNER_TEMP%\speech ws" || exit /b 1
+          call "%KIT%\bin\certainty.cmd" doctor || exit /b 1
+          call "%KIT%\bin\certainty.cmd" whisper stories\ci\speech --model base.en || exit /b 1
+          call "%KIT%\bin\certainty.cmd" takes stories\ci\speech || exit /b 1
+          call "%KIT%\bin\certainty.cmd" clock stories\ci\speech || exit /b 1
+          call "%KIT%\bin\certainty.cmd" mix stories\ci\speech || exit /b 1
+
+  plugin:
+    # The plugin and marketplace manifests, as Claude Code reads them.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - name: claude plugin validate
+        run: |
+          npm install -g --silent @anthropic-ai/claude-code
+          claude plugin validate .

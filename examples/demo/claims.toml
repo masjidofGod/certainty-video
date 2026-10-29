@@ -1,0 +1,7 @@
+# Every number the demo shows, checked against your data before it is drawn.
+[[claim]]
+id = "basmalah-letters"
+says = "The Basmalah (1:1) has 19 letters"
+kind = "letters"
+verses = "1:1"
+stated = 19

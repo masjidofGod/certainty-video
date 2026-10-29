@@ -1,0 +1,16 @@
+{
+  "name": "certainty-video",
+  "owner": {
+    "name": "Certainty"
+  },
+  "metadata": {
+    "description": "The Certainty kit for Claude Code: films that count the Quran's number patterns, made on your own computer."
+  },
+  "plugins": [
+    {
+      "name": "certainty",
+      "source": "./",
+      "description": "The engine, the certainty command, and the skills that take an episode from claims to upload file."
+    }
+  ]
+}

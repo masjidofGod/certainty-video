@@ -1,0 +1,7 @@
+# This folder is a Certainty workspace: your series' settings, data and episodes. `certainty init` made this file;
+# every command finds the workspace by it. It is yours: edit it freely.
+
+# Your Quran data file: a JSON list of verse records in the format of the kit's docs/data-format.md.
+# A path relative to this folder, or an absolute one. On Windows, write it with forward slashes:
+# quran_data = "C:/Users/you/Documents/quran.json". CERTAINTY_QURAN_DATA, if set, wins.
+quran_data = "data/quran.json"

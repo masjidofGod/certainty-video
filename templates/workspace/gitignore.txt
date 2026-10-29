@@ -1,0 +1,21 @@
+# Yours, never shared
+.env
+data/*
+!data/README.md
+
+# Media: made by the pipeline, kept on your machine
+*.wav
+*.mp3
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+stories/*/*/out/
+stories/*/*/takes/
+stories/*/*/whisper/
+demo/
+__pycache__/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,22 @@
+# The demo: the Basmalah written by the pen, then counted letter by letter, in silence but for the clicks.
+# It needs no voice and no credits; `certainty demo` builds it from your Quran data.
+id = "demo"
+title = "The Basmalah, counted"
+fps = 24
+
+[clock]
+tail = 3.4
+
+[count]
+after_line = 0
+start = 4.2
+verse = "1:1"
+open = 1.0
+click_first = 0.36
+click_last = 0.24
+group_breath = 0.12
+to_numeral = 0.75
+after = 0.0
+
+[mix]
+bells_on = []

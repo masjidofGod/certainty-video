@@ -1,0 +1,19 @@
+{
+  "name": "certainty",
+  "version": "0.2.0",
+  "description": "Make short vertical films that count one of the Quran's number patterns, so viewers can check them: a drawing engine, a pipeline from script to upload file, and a crew of skills that takes an episode through it. Runs on your own computer: Windows, macOS or Linux.",
+  "author": {
+    "name": "Certainty"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "keywords": [
+    "video",
+    "animation",
+    "quran",
+    "explainer",
+    "vertical-video",
+    "shorts",
+    "reels",
+    "tiktok"
+  ]
+}

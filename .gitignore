@@ -1,0 +1,13 @@
+# A workspace made in the kit's own folder (`bin/certainty init` here) stays out of git: keys, data, episodes, media
+/certainty.toml
+/.env
+/data/
+/stories/
+/demo/
+/CLAUDE.md
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

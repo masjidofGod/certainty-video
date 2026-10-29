@@ -1,0 +1,59 @@
+# {{EPISODE_ID}}: the episode's settings. Every value here is read by a command; fill in the blanks marked FILL IN.
+id = "{{EPISODE_ID}}"
+title = ""            # FILL IN: the episode's working title
+fps = 24
+
+[voice]               # certainty voice: ElevenLabs text to speech (the key and the voice ID live in .env)
+model = "eleven_multilingual_v2"
+settings = { stability = 0.55, similarity_boost = 0.8, style = 0.1, use_speaker_boost = true }
+takes = 2             # takes per line; the shorter word-perfect take is picked
+
+[takes]               # certainty takes: how strictly takes are checked
+names = {}            # words the recognizer cannot spell, e.g. { basmalah = ["bismillah"] }
+prefer = {}           # a take chosen by hand for a line, e.g. { 4 = 1 }, with the reason in decisions.md
+
+[clock]               # certainty clock: the air between lines
+start = 0.3
+gap = 0.4
+gaps = {}             # longer or shorter air after given lines, e.g. { 2 = 1.5 }
+max_pause = 0.38
+beats = {}            # a "(beat)" in a line: { 3 = [0, 0.6] } = after word 0 of line 3, a pause of 0.6 s
+tail = 3.0
+
+# [count]             # uncomment for a verse counted on screen, letter by letter, after a line
+# after_line = 17
+# verse = "1:1"
+# open = 1.0
+# click_first = 0.36
+# click_last = 0.24
+# group_breath = 0.12
+# to_numeral = 0.75
+# after = 1.1
+
+[mix]                 # certainty mix
+lufs = -16
+true_peak = -2.5
+bells_on = []         # a small bell on these spoken words, e.g. ["nineteen"]
+music_under_voice_db = -14
+
+# [[mix.music]]       # one block per music cue (made with certainty music, or your own licensed file)
+# file = "music/M1_take1.wav"
+# start = "0"         # seconds, "L3" (that line's start), "count", "numeral" or "end"
+# end = "count"
+# skip = 0.0
+# gain_db = 0
+# fade_in = 0.0
+# fade_out = 3.0
+
+[cover]               # certainty cover
+series = "CERTAINTY"
+episode = ""          # FILL IN, e.g. "EPISODE 1"
+headline = []         # FILL IN: one or two short lines, e.g. ["COUNT IT"]
+gold_words = []
+numbers = []          # a row of large numbers from your claims, e.g. ["19"]
+number_labels = []
+arabic = ""           # a phrase JSON from certainty glyphs phrase
+painting = ""         # a painting you may use; record its source in covers/SOURCES.md
+focus = [0.5, 0.3]
+place = [0.5, 0.33]
+logo = ""             # your own mark, a white-on-black PNG

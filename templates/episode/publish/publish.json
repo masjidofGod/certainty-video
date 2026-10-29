@@ -1,0 +1,11 @@
+{
+  "video": "{{EPISODE_ID}}.mp4",
+  "title": "",
+  "description": "",
+  "platforms": {
+    "youtube": {"thumbnail": "cover-reels-1080x1920.jpg", "visibility": "public", "audience": "not_for_kids",
+                "subtitles": "{{EPISODE_ID}}.en.srt"},
+    "tiktok": {"cover": "cover-tiktok-1080x1440.jpg", "caption": ""},
+    "instagram": {"cover": "cover-reels-1080x1920.jpg", "caption": ""}
+  }
+}

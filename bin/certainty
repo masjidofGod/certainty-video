@@ -1,0 +1,11 @@
+#!/bin/sh
+# The kit's one command (macOS, Linux, and Git Bash on Windows). `certainty` alone lists what it does.
+# It finds Python 3.12 or 3.13 and hands over to engine/launch.py, which keeps the kit's packages ready.
+KIT=$(cd "$(dirname "$0")/.." && pwd)
+for c in python3.12 python3.13 "py -3.12" "py -3.13" python3 python; do
+  if $c -c 'import sys; sys.exit(0 if sys.version_info[:2] in ((3, 12), (3, 13)) else 1)' >/dev/null 2>&1; then
+    exec $c -I "$KIT/engine/launch.py" "$@"
+  fi
+done
+echo "certainty needs Python 3.12 or 3.13: install it from python.org (Windows: winget install --id Python.Python.3.12)." >&2
+exit 1

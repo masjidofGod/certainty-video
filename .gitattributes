@@ -1,0 +1,9 @@
+# Line endings: LF everywhere, CRLF for Windows command files, so the kit works the same on every system
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ttf binary
+*.png binary
+*.jpg binary
+*.wav binary
+*.mp4 binary

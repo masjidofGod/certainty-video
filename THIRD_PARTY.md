@@ -1,0 +1,63 @@
+# Third-party material in this kit
+
+Each folder keeps its own LICENSE (and NOTICE where there is one). The kit stripped notes that pointed at the
+project the skills were first vendored into, and rewrote a few lines that named its tools; nothing else in
+them was changed for the kit.
+
+## Skills
+
+| Skill | Source | Commit | License |
+| --- | --- | --- | --- |
+| `art-character-continuity` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (LICENSE in each folder) |
+| `art-cinematic-realism` | <https://github.com/popopo-99/zy-cinematic-realism> (`zy-cinematic-realism/`) | `9a3b36d1fb6a980ae9e21f74c86dd56bae443a4d` | CC BY-NC 4.0, by ZY / popopo-99 (see LICENSE and NOTICE.md). Noncommercial use only. |
+| `art-color-grading` | same repo (`skills/production/post-production/color-grading-finishing/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT |
+| `art-color-script` | <https://github.com/Benitoow/cinema-skills> (`skills/color-script/`) | `b3d96caaf90729f086ce8bfa96654f40fd98e4e5` | MIT, by Benjamin Leleu |
+| `art-lighting` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (LICENSE in each folder) |
+| `art-production-design` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (LICENSE in each folder) |
+| `art-reference-analysis` | same repo (`skills/production/governance-delivery/reference-media-analysis/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT |
+| `art-visual-style` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (LICENSE in each folder) |
+| `cam-blender-render-craft` | Written for the kit on 2026-10-28, distilled from <https://github.com/RobLe3/cc-blender-skill> (`plugin/skills/`: `blender-lighting`, `blender-cameras`, `blender-rendering`, `blender-animation`, `blender-pro-workflow`) and checked against Blender 5.0.1 | `a2634b588e80265e796aa53f8ab178d75105c2af` | Project text; source MIT, copied as `LICENSE-RobLe3` |
+| `cam-shot-direction` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/cinematic-shot-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into the folder) |
+| `cam-video-description` | same repo (`skills/production/creative-direction/precise-video-description/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into the folder) |
+| `cast-performance-direction` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/performance-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into the folder) |
+| `ed-captions` | <https://github.com/calesthio/generative-media-skills> (`skills/production/post-production/editing-montage`, `post-production/vfx-compositing`, `audio-craft/captions-media-accessibility`, `post-production/title-kinetic-typography`, `runtime-assembly/ffmpeg-media-finishing`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `ed-editing-montage` | <https://github.com/calesthio/generative-media-skills> (`skills/production/post-production/editing-montage`, `post-production/vfx-compositing`, `audio-craft/captions-media-accessibility`, `post-production/title-kinetic-typography`, `runtime-assembly/ffmpeg-media-finishing`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `ed-editor-judgment` | <https://github.com/wonsukchoi/domain-experts> (`roles/film-video-editor/`, with its three reference files) | `0101c5456f7e4d718a5dd7657c4514448039a303` | MIT, by Wonsuk Choi (LICENSE copied into the folder) |
+| `ed-ffmpeg-finishing` | <https://github.com/calesthio/generative-media-skills> (`skills/production/post-production/editing-montage`, `post-production/vfx-compositing`, `audio-craft/captions-media-accessibility`, `post-production/title-kinetic-typography`, `runtime-assembly/ffmpeg-media-finishing`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `ed-titles-typography` | <https://github.com/calesthio/generative-media-skills> (`skills/production/post-production/editing-montage`, `post-production/vfx-compositing`, `audio-craft/captions-media-accessibility`, `post-production/title-kinetic-typography`, `runtime-assembly/ffmpeg-media-finishing`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `ed-vfx-compositing` | <https://github.com/calesthio/generative-media-skills> (`skills/production/post-production/editing-montage`, `post-production/vfx-compositing`, `audio-craft/captions-media-accessibility`, `post-production/title-kinetic-typography`, `runtime-assembly/ffmpeg-media-finishing`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-asset-continuity` | <https://github.com/calesthio/generative-media-skills> (`skills/production/governance-delivery/`: `asset-continuity-management`, `generated-media-qa`, `media-qc-delivery`, `media-provenance-rights`; `skills/providers/video-generation/video-generation-gateways`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-gateway-ops` | <https://github.com/calesthio/generative-media-skills> (`skills/production/governance-delivery/`: `asset-continuity-management`, `generated-media-qa`, `media-qc-delivery`, `media-provenance-rights`; `skills/providers/video-generation/video-generation-gateways`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-media-qa` | <https://github.com/calesthio/generative-media-skills> (`skills/production/governance-delivery/`: `asset-continuity-management`, `generated-media-qa`, `media-qc-delivery`, `media-provenance-rights`; `skills/providers/video-generation/video-generation-gateways`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-production-system` | <https://github.com/m24927605/video-prompt> (`skills/seedance-film-producer/`, `skills/seedance-video-qc/`: SKILL.md and `references/`, without `agents/`) | `d6c00b0c48330f14a5357a9133775438fbc72d99` | MIT (LICENSE in each folder, by m24927605) |
+| `prod-provenance-rights` | <https://github.com/calesthio/generative-media-skills> (`skills/production/governance-delivery/`: `asset-continuity-management`, `generated-media-qa`, `media-qc-delivery`, `media-provenance-rights`; `skills/providers/video-generation/video-generation-gateways`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-qc-delivery` | <https://github.com/calesthio/generative-media-skills> (`skills/production/governance-delivery/`: `asset-continuity-management`, `generated-media-qa`, `media-qc-delivery`, `media-provenance-rights`; `skills/providers/video-generation/video-generation-gateways`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `prod-video-qc` | <https://github.com/m24927605/video-prompt> (`skills/seedance-film-producer/`, `skills/seedance-video-qc/`: SKILL.md and `references/`, without `agents/`) | `d6c00b0c48330f14a5357a9133775438fbc72d99` | MIT (LICENSE in each folder, by m24927605) |
+| `sb-cinematic-explainer` | Written for the kit on 2026-10-28, distilled from <https://github.com/sunxiayi/make-blender-education-video-skill> (`skills/make-blender-education-video/`; three `references/` files copied) and <https://github.com/charlie947/motion-graphics-skills> (`skills/vox-explainer/`, `skills/motion-effects/`) | `8fcc2095d0b55a9fef06d920457a9fa32a4cf568` (sunxiayi), `229022ebca76972e119e36ada23a1648d51665ab` (charlie947) | Project text; both sources MIT, copied as `LICENSE-sunxiayi` and `LICENSE-charlie947` |
+| `sb-storyboard-previs` | <https://github.com/calesthio/generative-media-skills> (`skills/production/creative-direction/`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (LICENSE in each folder) |
+| `snd-design-foley` | <https://github.com/calesthio/generative-media-skills> (`skills/production/audio-craft/`: `sound-design-foley`, `video-to-audio-foley`, `dialogue-editing-adr`, `music-supervision-scoring`, `audio-mixing-mastering`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `snd-dialogue-adr` | <https://github.com/calesthio/generative-media-skills> (`skills/production/audio-craft/`: `sound-design-foley`, `video-to-audio-foley`, `dialogue-editing-adr`, `music-supervision-scoring`, `audio-mixing-mastering`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `snd-mix-master` | <https://github.com/calesthio/generative-media-skills> (`skills/production/audio-craft/`: `sound-design-foley`, `video-to-audio-foley`, `dialogue-editing-adr`, `music-supervision-scoring`, `audio-mixing-mastering`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `snd-music-scoring` | <https://github.com/calesthio/generative-media-skills> (`skills/production/audio-craft/`: `sound-design-foley`, `video-to-audio-foley`, `dialogue-editing-adr`, `music-supervision-scoring`, `audio-mixing-mastering`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `snd-video-to-audio` | <https://github.com/calesthio/generative-media-skills> (`skills/production/audio-craft/`: `sound-design-foley`, `video-to-audio-foley`, `dialogue-editing-adr`, `music-supervision-scoring`, `audio-mixing-mastering`) | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` | MIT (repository LICENSE copied into each folder) |
+| `sw-american-case-studies` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-character-conflict` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-dialogue` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-format-adaptation` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-genre-anatomy` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-premise-theme` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-scene-craft` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-story-structure` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-truby-anatomy` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `sw-workflow` | <https://github.com/jtydhr88/screenwriting-skills> (`plugins/screenwriting/skills/`) | `51115f18d160aa8b2ac5813e4432b6f0b425358f` | MIT (see LICENSE and NOTICE in each folder) |
+| `video-shot-prompts` | <https://github.com/smixs/visual-skills> (`video/`) | `92be33a5a73325fb3d8e0c73b22744b114e2a90e` | CC BY 4.0, by Serge Shima (see LICENSE and NOTICE). Modified (see the folder's NOTICE). |
+
+## Fonts
+
+| Font | License |
+| --- | --- |
+| Amiri Quran (Khaled Hosny and the Amiri Project Authors) | SIL Open Font License 1.1, `fonts/OFL-AmiriQuran.txt` |
+| IBM Plex Mono (IBM) | SIL Open Font License 1.1, `fonts/OFL-IBMPlexMono.txt` |
+| Poppins (Indian Type Foundry) | SIL Open Font License 1.1, `fonts/OFL-Poppins.txt` |
+| Source Serif 4 (Adobe) | SIL Open Font License 1.1, `fonts/OFL-SourceSerif4.txt` |
+

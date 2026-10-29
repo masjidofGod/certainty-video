@@ -1,0 +1,14 @@
+# {{EPISODE_ID}}: every number the episode says or shows, checked against your Quran data.
+# certainty verify stories/{{SERIES}}/{{EPISODE_ID}}/claims.toml   (exit 1 if any claim differs)
+#
+# kind:  letters (verses)   words (verses)   verses (sura)   letter (letter, sura)   suras   unnumbered
+# verses: "1:1", a range "96:1-5", or a list ["1:1", "27:30"]; sura: a number or a list
+#
+# A timeline draws a claim's number with engine.verify.measured(path, id), which refuses a claim that differs.
+
+[[claim]]
+id = "example-basmalah-letters"
+says = "The Basmalah (1:1) has 19 letters"
+kind = "letters"
+verses = "1:1"
+stated = 19
